@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <h1>welcome to Weather App</h1>
+
+    <div class="main_container">
+      <header class="header">
+        <div class="logo"></div>
+        <div class="search_bar_container">
+          <form action="" class="form">
+            <label for="city_search">Enter your city name</label>
+            <input
+              type="text"
+              name="city"
+              id="city_search"
+              class="city_search"
+            />
+            <button class="submit_city">Submit</button>
+          </form>
+        </div>
+        <div class="switch_buttons_container">
+          <button>Celcius</button>
+          <button>Fahrenheit</button>
+        </div>
+      </header>
+      <div class="content_main_container">
+        <div class="current_day_top_container">
+          <div class="current_day_location">XX*Amsterdam, Netherlands</div>
+          <div class="current_day_date_and_time">
+            XX*Saturday 10 June 2023 | 15:44
+          </div>
+        </div>
+
+        <div class="current_day_bottom_container">
+          <div class="current_day_degree">XX*28°C</div>
+          <div class="current_day_status_container">
+            <div class="current_day_status">XX*Clear sky</div>
+            <div class="current_day_feels_like">XX*Feels like 29°C</div>
+          </div>
+          <div class="current_day_info_container">
+            <div class="info_temp_highest">XX*33</div>
+            <div class="info_temp_lowest">XX*15</div>
+            <div class="info_wind">XX*6m/s</div>
+            <div class="info_humidity">XX*49%</div>
+            <div class="info_visibility">XX*10km</div>
+            <div class="info_chance_of_rain">XX*0</div>
+          </div>
+        </div>
+
+        <div class="three_days_view_container">
+          <div>Weekly Forecast</div>
+          <div class="day_view_container today">
+            <div class="day">XX*Sunday</div>
+            <div class="icon"></div>
+            <div class="degree_max">XX*27</div>
+            <div class="degree_min">XX*19</div>
+          </div>
+          <div class="day_view_container tomorrow">
+            <div class="day">XX*Monday</div>
+            <div class="icon"></div>
+            <div class="degree_max">XX*29</div>
+            <div class="degree_min">XX*21</div>
+          </div>
+          <div class="day_view_container the_other_day">
+            <div class="day">XX*Tuesday</div>
+            <div class="icon"></div>
+            <div class="degree_max">XX*31</div>
+            <div class="degree_min">XX*23</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
