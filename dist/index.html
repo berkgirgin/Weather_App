@@ -7,26 +7,26 @@
     <title>Weather App</title>
   </head>
   <body>
-    <h1>welcome to Weather App</h1>
+    <div class="top_header_container">
+      <div class="logo"></div>
+      <h1>My Weather App</h1>
+    </div>
 
     <div class="main_container">
       <header class="header">
-        <div class="logo"></div>
         <div class="search_bar_container">
           <form action="" class="form">
-            <label for="city_search">Enter your city name</label>
             <input
               type="text"
               name="city"
               id="city_search"
               class="city_search"
+              placeholder="Enter your city name"
             />
-            <button class="submit_city">Submit</button>
+            <button class="submit_city">
+              <img src="b42dcec9188c99df8e20.png" alt="search icon" />
+            </button>
           </form>
-        </div>
-        <div class="switch_buttons_container">
-          <button>Celcius</button>
-          <button>Fahrenheit</button>
         </div>
       </header>
       <div class="content_main_container">
@@ -38,38 +38,72 @@
         </div>
 
         <div class="current_day_bottom_container">
-          <div class="current_day_degree">XX*28°C</div>
+          <div class="current_day_degree_container">
+            <img class="current_day_icon" alt="current day icon" />
+            <div class="current_day_degree">XX*28°C</div>
+          </div>
+
           <div class="current_day_status_container">
             <div class="current_day_status">XX*Clear sky</div>
             <div class="current_day_feels_like">XX*Feels like 29°C</div>
           </div>
           <div class="current_day_info_container">
-            <div class="info_temp_highest">XX*33</div>
-            <div class="info_temp_lowest">XX*15</div>
-            <div class="info_wind">XX*6m/s</div>
-            <div class="info_humidity">XX*49%</div>
-            <div class="info_visibility">XX*10km</div>
-            <div class="info_chance_of_rain">XX*0</div>
+            <div class="info_container">
+              <div class="info_description">Highest Temperature</div>
+              <div class="info_temp_highest">XX*33</div>
+            </div>
+            <div class="info_container">
+              <div class="info_description">Lowest Temperature</div>
+              <div class="info_temp_lowest">XX*15</div>
+            </div>
+            <div class="info_container">
+              <div class="info_description">Wind</div>
+              <div class="info_wind">XX*6m/s</div>
+            </div>
+            <div class="info_container">
+              <div class="info_description">Humidity</div>
+              <div class="info_humidity">XX*49%</div>
+            </div>
+            <div class="info_container">
+              <div class="info_description">Visibility</div>
+              <div class="info_visibility">XX*10km</div>
+            </div>
+            <div class="info_container">
+              <div class="info_description">Chance of Rain</div>
+              <div class="info_chance_of_rain">XX*0</div>
+            </div>
+            <div class="info_container">
+              <div class="info_description">Sunrise</div>
+              <div class="info_sunrise">XX*05:37</div>
+            </div>
+            <div class="info_container">
+              <div class="info_description">Sunset</div>
+              <div class="info_sunset">XX*21:55</div>
+            </div>
+            <div class="info_container">
+              <div class="info_description">UV Index</div>
+              <div class="info_uv_index">XX*1</div>
+            </div>
           </div>
         </div>
 
         <div class="three_days_view_container">
-          <div>Weekly Forecast</div>
+          <div class="three_days_view_title">Three Day Forecast</div>
           <div class="day_view_container today">
             <div class="day">XX*Sunday</div>
-            <div class="icon"></div>
+            <img class="icon" alt="today's icon" />
             <div class="degree_max">XX*27</div>
             <div class="degree_min">XX*19</div>
           </div>
           <div class="day_view_container tomorrow">
             <div class="day">XX*Monday</div>
-            <div class="icon"></div>
+            <img class="icon" alt="tomorrows's icon" />
             <div class="degree_max">XX*29</div>
             <div class="degree_min">XX*21</div>
           </div>
           <div class="day_view_container the_other_day">
             <div class="day">XX*Tuesday</div>
-            <div class="icon"></div>
+            <img class="icon" alt="the other day's icon" />
             <div class="degree_max">XX*31</div>
             <div class="degree_min">XX*23</div>
           </div>

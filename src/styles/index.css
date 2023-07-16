@@ -1,10 +1,40 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  --font_color_white: #e8e6e3;
+  --transparent-white: rgba(255, 255, 255, 0.5);
+  --border_radius: 10px;
+}
+
 body {
-  background-color: aliceblue;
+  color: var(--font_color_white);
+  background-color: darkgray;
+  background-image: url(../images/space_with_stars.jpg);
+  background-position: center;
+
+  font-family: "Nunito";
 }
 
 * {
-  border: 2px red solid;
-  padding: 8px;
+  /* border: 2px red solid;
+  padding: 4px; */
+}
+
+.top_header_container {
+  display: flex;
+  justify-content: space-between;
+
+  height: 5rem;
+}
+.logo {
+  align-self: flex-start;
+}
+h1 {
+  margin: 0 auto;
 }
 
 .main_container {
@@ -19,10 +49,50 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
   height: 5rem;
 }
+
+form {
+  border-radius: var(--border_radius);
+  background-color: var(--font_color_white);
+  border: 4px transparent solid;
+
+  min-width: 20rem;
+  display: flex;
+  padding: 0.4rem 0.2rem 0.4rem 0.6rem;
+}
+form:hover {
+  border-color: orange;
+
+  transition: border 0.3s;
+}
+form button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+form button img {
+  height: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+form input {
+  cursor: pointer;
+  /* background-color: transparent;
+  border: none; */
+
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+}
+
+form input:focus {
+  outline: none;
+}
+
 /* ****** */
 /* ****** */
 
@@ -35,6 +105,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  gap: 3rem;
 }
 
 /* ********************** */
@@ -44,6 +116,20 @@ body {
 /* current_day_top_container */
 
 .current_day_top_container {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.current_day_location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+.current_day_date_and_time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--transparent-white);
 }
 /* ************************* */
 
@@ -52,6 +138,71 @@ body {
 
 .current_day_bottom_container {
   display: grid;
-  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-columns: 1fr 3fr;
+}
+
+.current_day_degree_container {
+  display: flex;
+  font-size: 4rem;
+}
+.current_day_icon {
+  padding: 0;
+  scale: 1;
+}
+.current_day_degree {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current_day_status_container {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.current_day_status {
+  font-size: 1.5rem;
+}
+.current_day_feels_like {
+  font-size: 1.2rem;
+  color: var(--transparent-white);
+}
+
+.current_day_info_container {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.info_container :nth-child(2) {
+  font-size: 1.5rem;
+}
+.info_description {
+  color: var(--transparent-white);
 }
 /* **************************** */
+
+/* three_days_view_container  */
+.three_days_view_container {
+  display: grid;
+  grid-template-rows: 1fr repeat(3, 2fr);
+}
+
+.day_view_container {
+  display: grid;
+  grid-template-columns: 3fr repeat(3, 2fr);
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.day_view_container .icon {
+  margin: 0 auto;
+}
+
+.three_days_view_title {
+  font-size: 2rem;
+}
+/* ************************** */

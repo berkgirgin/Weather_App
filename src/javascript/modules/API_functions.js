@@ -34,6 +34,9 @@ export async function getWeather(city_name) {
         last_updated: data.current.last_updated, //date and time, e.g "2023-06-08 11:15"
         chance_of_rain: data.forecast.forecastday[0].day.daily_chance_of_rain,
         visibility: data.current.vis_km,
+        sunrise: data.forecast.forecastday[0].astro.sunrise, // 05:03 AM
+        sunset: data.forecast.forecastday[0].astro.sunset, // 05:03 AM
+        uv: data.current.uv,
       },
 
       forecast: {
