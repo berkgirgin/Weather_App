@@ -1,4 +1,5 @@
 import { format, parseISO } from "date-fns";
+import { round } from "mathjs";
 
 const currentDay_Location = document.querySelector(".current_day_location");
 const currentDay_DateAndTime = document.querySelector(
@@ -45,6 +46,11 @@ const theOtherDay_MinDegree = document.querySelector(
   ".the_other_day .degree_min"
 );
 
+function roundDegree(str) {
+  let number = Number(str);
+  return Math.round(number);
+}
+
 export function updateDomElements(weatherData) {
   currentDay_Location.textContent =
     weatherData.location.city + ", " + weatherData.location.country;
@@ -58,12 +64,12 @@ export function updateDomElements(weatherData) {
   currentDay_Degree.textContent = weatherData.current.temp_c + "°C";
   currentDay_Status.textContent = weatherData.current.condition.text;
   currentDay_FeelsLike.textContent =
-    "Feels like " + weatherData.current.feelslike_c;
+    "Feels like " + roundDegree(weatherData.current.feelslike_c) + "°C";
 
   currentDay_TempHighest.textContent =
-    weatherData.forecast.day0.maxtemp_c + "°C";
+    roundDegree(weatherData.forecast.day0.maxtemp_c) + "°C";
   currentDay_TempLowest.textContent =
-    weatherData.forecast.day0.mintemp_c + "°C";
+    roundDegree(weatherData.forecast.day0.mintemp_c) + "°C";
   currentDay_Wind.textContent = weatherData.current.windspeed + " km/h";
   currentDay_Humidity.textContent = "%" + weatherData.current.humidity_percent;
   currentDay_Visibility.textContent = weatherData.current.visibility + " km";
@@ -78,8 +84,10 @@ export function updateDomElements(weatherData) {
     "EEEE"
   );
   today_Icon.setAttribute("src", weatherData.forecast.day0.condition.icon_URL);
-  today_MaxDegree.textContent = weatherData.forecast.day0.maxtemp_c;
-  today_MinDegree.textContent = weatherData.forecast.day0.mintemp_c;
+  today_MaxDegree.textContent =
+    roundDegree(weatherData.forecast.day0.maxtemp_c) + "°C";
+  today_MinDegree.textContent =
+    roundDegree(weatherData.forecast.day0.mintemp_c) + "°C";
 
   tomorrow_Day.textContent = format(
     parseISO(weatherData.forecast.day1.date),
@@ -89,8 +97,10 @@ export function updateDomElements(weatherData) {
     "src",
     weatherData.forecast.day1.condition.icon_URL
   );
-  tomorrow_MaxDegree.textContent = weatherData.forecast.day1.maxtemp_c;
-  tomorrow_MinDegree.textContent = weatherData.forecast.day1.mintemp_c;
+  tomorrow_MaxDegree.textContent =
+    roundDegree(weatherData.forecast.day1.maxtemp_c) + "°C";
+  tomorrow_MinDegree.textContent =
+    roundDegree(weatherData.forecast.day1.mintemp_c) + "°C";
 
   theOtherDay_Day.textContent = format(
     parseISO(weatherData.forecast.day2.date),
@@ -100,6 +110,8 @@ export function updateDomElements(weatherData) {
     "src",
     weatherData.forecast.day2.condition.icon_URL
   );
-  theOtherDay_MaxDegree.textContent = weatherData.forecast.day2.maxtemp_c;
-  theOtherDay_MinDegree.textContent = weatherData.forecast.day2.mintemp_c;
+  theOtherDay_MaxDegree.textContent =
+    roundDegree(weatherData.forecast.day2.maxtemp_c) + "°C";
+  theOtherDay_MinDegree.textContent =
+    roundDegree(weatherData.forecast.day2.mintemp_c) + "°C";
 }
