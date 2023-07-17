@@ -1,3 +1,5 @@
+// Practicing promises and async functions
+
 import "../styles/index.css";
 import { format } from "date-fns";
 import { getWeather } from "./modules/API_functions.js";
